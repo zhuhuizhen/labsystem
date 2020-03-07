@@ -27,7 +27,7 @@
   </el-container>
 
   // 对话框
-  <el-dialog title="新建商品22" :visible.sync="dialogFormVisible">
+  <el-dialog title="新建商品232" :visible.sync="dialogFormVisible">
     <!-- 步骤条 -->
 <el-steps :active="stepactive" simple>
   <el-step title="" icon="" >
