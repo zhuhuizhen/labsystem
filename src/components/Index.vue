@@ -42,7 +42,7 @@
 </el-steps>
     <!-- tabs -->
     <el-tabs stretch @tab-click="changeTab" v-model="activeName">
-      <el-tab-pane name="first" label="基本信息11">
+      <el-tab-pane name="first" label="基本信息">
          基本信息
         <el-button size="small" class="button-sub" @click="savebasic">下一步</el-button>
       </el-tab-pane>
