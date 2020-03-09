@@ -1,6 +1,6 @@
 <template>
   <el-container>
-  <el-header>我的商品管理系统11</el-header>
+  <el-header>我的商品管理系统</el-header>
   <el-container>
     <el-aside width="200px">
       <el-tree 
@@ -48,7 +48,7 @@
 </el-steps>
     <!-- tabs -->
     <el-tabs stretch @tab-click="changeTab" v-model="activeName">
-      <el-tab-pane name="first" label="基本信息xiugai">
+      <el-tab-pane name="first" label="基本信息">
          基本信息
         <el-button size="small" class="button-sub" @click="savebasic">下一步</el-button>
       </el-tab-pane>
