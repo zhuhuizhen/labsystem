@@ -1,6 +1,6 @@
 <template>
   <el-container>
-  <el-header>我的商品管理系统11</el-header>
+  <el-header>我的商品管理系统11所涉及计算机</el-header>
   <el-container>
     <el-aside width="200px">
       <el-tree 
@@ -10,7 +10,7 @@
       </el-tree>
     </el-aside>
     <el-main>
-      <el-button type="text" @click="dialogFormVisible = true">新建</el-button>
+      <el-button type="text" @click="dialogFormVisible = true">新建三生三世</el-button>
       <el-table
       :data="tableData"
       style="width: 100%">
