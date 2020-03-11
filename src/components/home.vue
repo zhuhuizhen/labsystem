@@ -1,6 +1,6 @@
 <template>
   <el-container>
-  <el-header>我的商品管理系统</el-header>
+  <el-header>我的商品管理系统修改提交</el-header>
   <el-container>
     <el-aside width="200px">
       <el-menu
