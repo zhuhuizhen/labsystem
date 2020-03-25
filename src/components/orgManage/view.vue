@@ -1,80 +1,65 @@
 <template>
   <div class="page">
-          <el-button type="text" @click="dialogFormVisible = true">新建</el-button>
-      <el-table
-      :data="tableData"
-      style="width: 100%">
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址">
-      </el-table-column>
-    </el-table>
-
-      // 对话框
-  <el-dialog title="新建商品" :visible.sync="dialogFormVisible">
-    <!-- 步骤条 -->
-<el-steps :active="stepactive" simple>
-  <el-step title="" icon="" >
-    <div slot="icon" class="el-step__icon-inner">1</div>
-  </el-step>
-  <el-step title="" icon="">
-    <div slot="icon" class="el-step__icon-inner">2</div>
-  </el-step>
-  <el-step title="" icon="">
-    <div slot="icon" class="el-step__icon-inner">3</div>
-  </el-step>
-</el-steps>
-    <!-- tabs -->
-    <el-tabs stretch @tab-click="changeTab" v-model="activeName">
-      <el-tab-pane name="first" label="基本信息xiugai">
-         基本信息
-        <el-button size="small" class="button-sub" @click="savebasic">下一步</el-button>
-      </el-tab-pane>
-      <el-tab-pane label="商品图片 " name="second">
-        商品图片
-       <el-button size="small" class="button-sub" @click="savepic">下一步</el-button>
-      </el-tab-pane>
-      <el-tab-pane label="商品内容" name="third" >
-        商品内容
-      </el-tab-pane>
-    </el-tabs>
-
-  <div slot="footer" class="dialog-footer">
-    <el-button @click="dialogFormVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
-  </div>
-</el-dialog>
+    <!-- tree -->
+    <div class="tree-div">
+      <el-tree 
+        :data="treeData" 
+        :props="defaultProps" 
+        @node-click="handleNodeClick">
+      </el-tree>
+    </div>
+    <!-- table -->
+    <div class="right-page">
+      <div class="right-title">
+        <el-row>
+          <el-col>
+            <el-form :inline="true" :model="formInline" class="demo-form-inline">
+              <el-form-item label="审批人">
+                <el-input v-model="formInline.user" placeholder="审批人"></el-input>
+              </el-form-item>
+              <el-form-item label="活动区域">
+                <el-select v-model="formInline.region" placeholder="活动区域">
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click="onSubmit">查询</el-button>
+              </el-form-item>
+            </el-form>
+          </el-col>
+        </el-row>
+      </div>
+      <div class="right-content">
+        <tableParent></tableParent>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+import tableParent from './tab/table'
 export default {
+  components: { tableParent },
   data() {
-    return {}
+    return {
+      treeData: [],
+      defaultProps: {
+        children: 'children',
+        label: 'label'
+      },
+      formInline: {
+        user: '',
+        region: ''
+      }
+    }
   },
   methods: {
-    // tab切换事件，同步切换步骤条
-    changeTab(tab) {
-      this.stepactive = tab.index - 0
+    handleNodeClick(data) {
+      console.log(data)
     },
-    // 点击下一步，保存基本信息，切换第二个tab页面
-    savebasic() {
-      this.stepactive = 1
-      this.activeName = 'second'
-    },
-    // 点击下一步，保存商品图片，切换第三个tab页面
-    savepic() {
-      this.stepactive = 2
-      this.activeName = 'third'
+    // 查询
+    onSubmit() {
+      console.log('submit!')
     }
   }
 }
@@ -93,6 +78,33 @@ export default {
 }
 .el-tabs__nav-wrap::after {
   background-color: #f5f7fa;
+}
+.page {
+  height: 100%;
+  display: flex;
+}
+.tree-div {
+  width: 200px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.right-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+.right-title {
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.el-form--inline .el-form-item {
+  line-height: 40px;
+}
+.right-content {
+  flex: 1;
 }
 </style>
 

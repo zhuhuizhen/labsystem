@@ -14,33 +14,7 @@ import leftNav from '../common/nav'
 export default {
   components: { leftNav },
   data() {
-    return {
-      stepactive: 0, // 步骤条高亮index
-      activeName: 'first', // tab高亮
-      tableData: [
-        {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        },
-        {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },
-        {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },
-        {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }
-      ],
-      dialogFormVisible: false
-    }
+    return {}
   },
   methods: {}
 }
@@ -66,7 +40,8 @@ export default {
   background-color: #e9eef3;
   color: #333;
   text-align: center;
-  line-height: 160px;
+  padding: 10px;
+  /* line-height: 160px; */
 }
 
 body > .el-container {
