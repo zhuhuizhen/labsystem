@@ -25,6 +25,12 @@
             <span>数据域管理</span>
           </template>
         </el-menu-item>
+        <el-menu-item index="test">
+          <template slot="title">
+            <i class="el-icon-document"></i>
+            <span>测试</span>
+          </template>
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">

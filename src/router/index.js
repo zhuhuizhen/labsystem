@@ -4,6 +4,7 @@ import Index from '@/components/Index'
 import Dashboard from '@/components/dashboard/view'
 import OrgManage from '@/components/orgManage/view'
 import RegionManage from '@/components/regionManage/view'
+import Test from '@/components/test'
 
 Vue.use(Router)
 
@@ -26,6 +27,10 @@ export default new Router({
         {
           path: '/regionManage',
           component: RegionManage
+        },
+        {
+          path: '/test',
+          component: Test
         }
       ]
     }

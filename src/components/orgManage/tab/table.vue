@@ -97,7 +97,8 @@ export default {
       addDialogVisible: false,
       eidtDialogVisible: false,
       stepactive: '0',
-      activeName: 'first'
+      activeName: 'first',
+      tableData: []
     }
   },
   methods: {

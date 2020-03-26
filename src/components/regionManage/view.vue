@@ -13,7 +13,7 @@
           node-key="id"
           :default-expanded-keys="[2, 3]"
           :default-checked-keys="[5]"
-          :props="defaultProps">
+          :props="tableData">
         </el-tree>
       </div>
       <div class="right-content">
@@ -121,7 +121,6 @@ export default {
 .page {
   height: 100%;
   display: flex;
-  flex-direction: column;
 }
 .page-right {
   flex: 1;
@@ -130,9 +129,11 @@ export default {
 .treeArea {
   width: 150px;
   margin: 5px;
+  height: 100%;
 }
 .el-tree {
   height: 100%;
+  width: 150px;
   border: 1px solid #ccc;
   background-color: none;
 }
@@ -140,7 +141,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding-top: 5px;
 }
 .right-title {
   height: 40px;
